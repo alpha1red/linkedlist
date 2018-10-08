@@ -1,4 +1,4 @@
-package node;
+package org.jointheleague.awesome500.linkedlist;
 
 public class Node<T>{
 	private final T value;
