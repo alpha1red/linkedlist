@@ -17,7 +17,7 @@ class TestLinkedList {
 		
 		assertEquals(Integer.valueOf(3), testList.getFirst().getValue());
 		assertEquals(Integer.valueOf(9), testList.getFirst().getNext().getValue());
-		assertEquals(Integer.valueOf(5), testList.getFirst().getNext().getNext().getValue());
+		assertEquals(Integers.valueOf(5), testList.getFirst().getNext().getNext().getValue());
 	}
 	
 	@Test
