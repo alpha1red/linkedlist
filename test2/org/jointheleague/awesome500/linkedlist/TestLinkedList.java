@@ -31,5 +31,72 @@ class TestLinkedList {
 		assertEquals(Integer.valueOf(9), testList.getFirst().getNext().getValue());
 		assertEquals(Integer.valueOf(3), testList.getFirst().getNext().getNext().getValue());
 	}
-
+	
+	@Test
+	void testRemoveFirst() {
+		LinkedList<Integer> testList = new LinkedList<> ();
+		testList.append(3);
+		testList.append(9);
+		testList.append(5);
+		
+		testList.removeFirst();
+		assertEquals(Integer.valueOf(9), testList.getFirst().getValue());
+		
+		testList.removeFirst();
+		assertEquals(Integer.valueOf(5), testList.getFirst().getValue());
+	}
+	
+	@Test
+	void testRemoveFirstNone() {
+		LinkedList<Integer> testList = new LinkedList<> ();
+		assertEquals(Boolean.valueOf(false), testList.removeFirst());
+	}
+	
+	@Test
+	void testRemoveLastFromEmptyList() {
+		LinkedList<Integer> testList = new LinkedList<> ();
+		assertFalse(testList.removeLast());
+	}
+	
+	@Test
+	void testRemoveLastFromNonEmptyList() {
+		LinkedList<Integer> testList = new LinkedList<> ();
+		testList.append(5);
+		testList.append(3);
+		testList.append(5);
+		assertTrue(testList.removeLast());
+		assertEquals(Integer.valueOf(3), testList.getLast().getValue());
+	}
+	
+	@Test
+	void testRemoveLastFromLength1List() {
+		LinkedList<Integer> testList = new LinkedList<> ();
+		testList.append(3);
+		testList.removeLast();
+		assertNull(testList.getFirst());
+		assertNull(testList.getLast());
+	}
+	
+	@Test
+	void testIsNull() {
+		LinkedList<Integer> testList = new LinkedList<> ();
+		testList.append(6);
+		assertTrue(testList.isNull(1)); // 1 refers to the index
+	}
+	
+	@Test
+	void testIsNull2() {
+		LinkedList<Integer> testList = new LinkedList<> ();
+		testList.append(6);
+		testList.append(8);
+		testList.append(12);
+		assertFalse(testList.isNull(1)); // 1 refers to the index
+	}
+	
+	@Test
+	void testGetValue() {
+		LinkedList<Integer> testList = new LinkedList<>();
+		testList.append(6);
+		assertEquals(Integer.valueOf(6), testList.getValue(0));
+	}
 }
