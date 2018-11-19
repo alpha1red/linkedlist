@@ -17,7 +17,7 @@ class TestLinkedList {
 		
 		assertEquals(Integer.valueOf(3), testList.getFirst().getValue());
 		assertEquals(Integer.valueOf(9), testList.getFirst().getNext().getValue());
-		assertEquals(Integers.valueOf(5), testList.getFirst().getNext().getNext().getValue());
+		assertEquals(Integer.valueOf(5), testList.getFirst().getNext().getNext().getValue());
 	}
 	
 	@Test
@@ -99,4 +99,22 @@ class TestLinkedList {
 		testList.append(6);
 		assertEquals(Integer.valueOf(6), testList.getValue(0));
 	}
+	
+	@Test
+	void testGetPrevious() {
+		LinkedList<Integer> testList = new LinkedList<>();
+		testList.append(0);
+		testList.append(1);
+		assertNull(testList.getFirst().getPrevious());
+		assertEquals(testList.getFirst().getValue(), testList.getLast().getPrevious().getValue());
+	}
+	
+	@Test
+	void testGetPreviousLength1List() {
+		LinkedList<Integer> testList = new LinkedList<>();
+		testList.append(0);
+		assertNull(testList.getFirst().getPrevious());
+		assertNull(testList.getLast().getPrevious());
+	}
+	
 }

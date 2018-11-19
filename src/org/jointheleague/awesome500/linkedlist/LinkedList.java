@@ -1,7 +1,5 @@
 package org.jointheleague.awesome500.linkedlist;
 
-import java.util.function.BooleanSupplier;
-
 public class LinkedList<T> {
 	public static <T> LinkedList<T> init() {
 		return new LinkedList<T>();
@@ -14,8 +12,11 @@ public class LinkedList<T> {
 		if (first == null) {
 			first = new Node<T>(element);
 			last = first;
+			first.setPrevious(null);
 		} else {
-			last.setNext(new Node<T>(element));
+			Node<T> newNode = new Node<T>(element);
+			last.setNext(newNode);
+			newNode.setPrevious(last);
 			last = last.getNext();
 		}
 	}
