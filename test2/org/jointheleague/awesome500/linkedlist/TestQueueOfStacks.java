@@ -31,8 +31,8 @@ public class TestQueueOfStacks {
 	public void testIsEmpty() {
 		QueueOfStacks<Integer> testQueue = new QueueOfStacks<> ();
 		assertTrue(testQueue.isEmpty());
-		//testQueue.push(6);
-		//assertFalse(testQueue.isEmpty());
+		testQueue.add(6);
+		assertFalse(testQueue.isEmpty());
 		
 	}
 	
