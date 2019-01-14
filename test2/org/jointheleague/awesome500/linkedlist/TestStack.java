@@ -24,4 +24,5 @@ public class TestStack {
 		Stack<Integer> testStack = new Stack<> ();
 		assertTrue(testStack.isEmpty());
 	}
+	
 }
