@@ -1,6 +1,6 @@
 package org.jointheleague.awesome500.linkedlist;
 
-public class Node<T>{
+public class Node<T extends Comparable<T>>{
 	private final T value;
 	
 	private Node<T> next;
@@ -29,4 +29,5 @@ public class Node<T>{
 	public T getValue() {
 		return value;
 	}
+	
 }
